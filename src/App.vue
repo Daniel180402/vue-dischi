@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header/>
-    <Main/>
+    <Header @searchGenre="search"/>
+    <Main :searchString="searchString"/>
   </div>
 </template>
 
@@ -14,6 +14,17 @@ export default {
   components: {
     Header,
     Main
+  },
+  data: function(){
+    return {
+      searchString: "",
+    }
+  },
+  methods: {
+    search(stringSearch){
+      console.log(stringSearch);
+      this.searchString = stringSearch;
+    }
   }
 }
 </script>

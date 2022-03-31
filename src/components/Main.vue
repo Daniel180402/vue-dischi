@@ -2,7 +2,7 @@
     <main>
         <div class="my-container">
             <div class="my-wrapper">
-                <div class="my-cards" v-for="(element, index) in songList" :key="index">
+                <div class="my-cards" v-for="(element, index) in newSearch(searchString)" :key="index">
                     <SingleSong :song="element"/>
                 </div>
             </div>
@@ -17,6 +17,7 @@ import SingleSong from './SingleSong.vue'
 
 export default {
     name: "MainPage",
+    props: { "searchString": String},
     components: {
         SingleSong
     },
@@ -38,6 +39,12 @@ export default {
             .catch((error) => {
                 console.error(error);
             })
+        },
+        newSearch(stringToSearch){
+            console.log(stringToSearch);
+            return this.songList.filter(
+                (element) => element.genre.includes(stringToSearch)
+            );
         }
     }
 }
