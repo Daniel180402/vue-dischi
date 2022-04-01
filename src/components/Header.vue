@@ -13,6 +13,7 @@
             <div class="input-group">
                 <select class="custom-select" @change="onChange($event)"  id="inputGroupSelect04">
                     <option selected>Choose...</option>
+                    <option value="">All</option>
                     <option value="Rock">Rock</option>
                     <option value="Jazz">Jazz</option>
                     <option value="Metal">Metal</option>
