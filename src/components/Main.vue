@@ -1,7 +1,7 @@
 <template>
     <main>
         <div class="my-container">
-            <div class="my-wrapper">
+            <div class="my-wrapper d-flex justify-content-center">
                 <div class="my-cards" v-for="(element, index) in newSearch(searchString)" :key="index">
                     <SingleSong :song="element"/>
                 </div>
